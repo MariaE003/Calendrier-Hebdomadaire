@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./src/output.css" rel="stylesheet">
     <title>calendrier</title>
     <style>
-    .conteiner {
-        background-color: rgb(196, 221, 243);
-    }
-</style>
+        .conteiner {
+            background-color: rgb(196, 221, 243);
+        }
+
+        .formulaire {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 1rem;
+            border-radius: 12px;
+            margin: 9rem;
+            width: 25rem;
+            height: 23rem;
+            background-color: rgb(196 221 243 / 27%);
+        }
+
+        .formulaire h1 {
+            font-size: 19px;
+            font-family: cursive;
+            font-weight: bold;
+        }
+
+        .formulaire .submitBtn {
+            border-radius: 0.75rem;
+            background-color: rgba(128, 128, 128, 0.541);
+            width: 9rem;
+            padding: 8px;
+        }
+
+        .input-style {
+            width: 17em;
+            border: 1px #0000003b solid;
+            border-radius: 12px;
+            padding: 10px;
+            outline: none;
+        }
+    </style>
 </head>
+
 <body>
     <main>
         <section class="conteiner ms-18 w-205   flex  items-start justify-evenly p-8  h-44 rounded-xl">
@@ -20,15 +56,17 @@
                     Calendrier Hebdomadaire
                 </h1>
                 <p class="my-1.5">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <button class="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded-xl">Add Reservation</button>
+                <button class="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded-xl">Add
+                    Reservation</button>
             </div>
         </section>
         <section class="ml-2 flex flex-col  ">
             <div class="flex items-center justify-evenly mt-3 mb-1.5 p-2.5   w-207 bg-gray-400 ms-15  rounded-xl">
 
-                <a href="#" class="text-2xl font-bold"> < </a>
+                <a href="#" class="text-2xl font-bold">
+                    < </a>
                         <h2 class=""> April 2020 </h2>
-                <a href="#" class="text-2xl font-bold"> > </a>
+                        <a href="#" class="text-2xl font-bold"> > </a>
 
             </div>
             <div class="flex items-center justify-around  w-207 bg-gray-400 p-2 ms-15  rounded-xl">
@@ -42,45 +80,46 @@
             </div>
 
             <!-- hr -->
-             <div class="">             
-            <div class="flex justify-around w-4xl flex-wrap">
-                <div  class="time flex flex-col items-center justify-around h-200">
-                <div>06-08</div>
-                <div>08-10</div>
-                <div>10-12</div>
-                <div>12-14</div>
-                <div>14-16</div>
-                <div>16-18</div>
-                <div>18-20</div>
-                <div>20-22</div>
-                <div>22-00</div>
-             </div>
-                <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2"></div>
-                <div class="bg-gray-200 w-27 h-200 my-2 rounded-xl py-2 px-2 "></div>
-                <div class="bg-gray-200 w-27 h-200 my-2 rounded-xl py-2 px-2 "></div>
-                <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 "></div>
-                <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 "></div>
-                <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 "></div>
-                <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 "></div>
-                
-            </div>
+            <div class="">
+                <div class="flex justify-around w-4xl flex-wrap">
+                    <div class="time flex flex-col items-center justify-around h-200">
+                        <div>06-08</div>
+                        <div>08-10</div>
+                        <div>10-12</div>
+                        <div>12-14</div>
+                        <div>14-16</div>
+                        <div>16-18</div>
+                        <div>18-20</div>
+                        <div>20-22</div>
+                        <div>22-00</div>
+                    </div>
+                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2"></div>
+                    <div class="bg-gray-200 w-27 h-200 my-2 rounded-xl py-2 px-2 "></div>
+                    <div class="bg-gray-200 w-27 h-200 my-2 rounded-xl py-2 px-2 "></div>
+                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 "></div>
+                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 "></div>
+                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 "></div>
+                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 "></div>
+
+                </div>
             </div>
         </section>
-         <form class="bg-gray-100 flex flex-col w-1/5 ">
-        <h1>Add Reservationn</h1>
-        <input type="text" class="Name bg-amber-100" placeholder="Name">
-        <input type="datetime" class="heureDebut" placeholder="heure de début">
-        <input type="datetime" class="heurefin" placeholder="heure de fin">
-        <input type="number" class="nombrePersonnes" placeholder="nombre de personnes">
-        <select name="" id="" class="typeRservation" >
-            <option value="">sur place</option>
-            <option value="">anniversaire</option>
-            <option value="">VIP</option>
-        </select>
-        <input type="submit" value="Add">
-    </form>
-        
+        <form class="formulaire">
+            <h1>Add Reservation</h1>
+            <input type="text" class="Name  input-style" placeholder="Name">
+            <input type="datetime" class="heureDebut input-style" placeholder="heure de début">
+            <input type="datetime" class="heurefin input-style" placeholder="heure de fin">
+            <input type="number" class="nombrePersonnes input-style" placeholder="nombre de personnes">
+            <select name="" id="" class="typeRservation input-style">
+                <option value="VIP">VIP</option>
+                <option value="standard">standard</option>
+                <option value="groupe">groupe</option>
+            </select>
+            <input type="submit" class="submitBtn" value="Add">
+        </form>
+
 
     </main>
 </body>
+
 </html>
