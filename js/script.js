@@ -247,3 +247,23 @@ function AfficherCalendrier(reservationInfo) {
 
     })
 }
+
+
+function deleteReservation(reservation) {
+    const btnDelete = document.querySelectorAll(".delete-btn");
+    // console.log(btnDelete);
+
+    btnDelete.forEach((btnDelete) => {
+        btnDelete.addEventListener("click", () => {
+            // profiles = profiles.filter(profil => profil.id !== id);
+            console.log(btnDelete.id);
+
+            reservation = reservation.filter(reser => reser.id !== parseInt(btnDelete.id));
+
+
+            addToLocalStorage(reservation);
+            AfficherCalendrier(reservation);
+        })
+    })
+
+}
