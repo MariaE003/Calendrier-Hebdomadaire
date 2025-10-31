@@ -209,6 +209,19 @@ function AfficherCalendrier(reservationInfo) {
 
                 break;
             case 4:
+                const div4 = document.createElement("div");
+                div4.innerHTML = `${e.Name}
+                ${e.heureDebut}
+                ${e.heureFin}
+                ${e.nombrePersonnes}
+                <div class="div-btn-reservation">
+                <button class="edit-btn" id="${e.id}"><img src="images/edit.svg"alt="none"></button>
+                <button class="delete-btn" id="${e.id}"><img src="images/delete.svg"alt="none"></button>
+                </div>
+                `;
+                case4Div.appendChild(div4);
+                virifierTime(e.heureDebut, e.heureFin, div4);
+
                
             case 5:
                 
