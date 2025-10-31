@@ -375,8 +375,8 @@ function updateReservation() {
     btnUpdate.forEach((btnUpdate) => {
         btnUpdate.addEventListener('click', () => {
             countainerForm.style.display = 'flex';
-            idRes = reservationInfo.find(reservation => reservation.id == btnUpdate.id);
-            idEdit=btnUpdate.id;
+            idRes = reservationInfo.find(reservation => reservation.id == Number(btnUpdate.id));
+            idEdit=Number(btnUpdate.id);
             // console.log(idRes);
             if (!idRes)return;
             Name.value=idRes.Name;
