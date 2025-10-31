@@ -7,91 +7,9 @@
     <meta name="description" content="Calendrier hebdomadaire pour gérer les réservations d'un restaurant. Ajoutez, modifiez et supprimez (CRUD) des réservations facilement.">
     <meta name="keywords" content="calendrier hebdomadaire, gestion réservations restaurant, calendrier, planning restaurant, réservation VIP, réservation standard">
     <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
     <title>Calendrier</title>
     <script src="js/script.js" defer></script>
-    <style>
-        .conteiner {
-            background-color: rgb(196, 221, 243);
-        }
-
-        .countainerForm {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.698);
-            justify-content: end;
-            align-items: center;
-        }
-
-        .formulaire {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            padding: 1rem;
-            border-radius: 12px;
-            width: 25rem;
-            height: 30rem;
-            background-color: rgb(196, 221, 243);
-            margin-right: 36%;
-        }
-
-        .formulaire h1 {
-            font-size: 19px;
-            font-family: cursive;
-            font-weight: bold;
-        }
-
-        .formulaire .submitBtn {
-            border-radius: 0.75rem;
-            background-color: rgba(128, 128, 128, 0.541);
-            width: 9rem;
-            padding: 8px;
-        }
-
-        .input-style {
-            width: 17em;
-            border: 1px #0000003b solid;
-            border-radius: 12px;
-            padding: 10px;
-            outline: none;
-        }
-
-        .submitBtnForm {
-            background-color: rgba(76, 76, 76, 0.49);
-            border-radius: 0.75rem;
-            width: 7rem;
-            height: 2.5em;
-            padding: 2px;
-            /* cursor: pointer; */
-        }
-
-        /*  */
-        .div-btn-reservation{
-            margin-top: 9px;
-
-        }
-        .edit-btn {
-            width: 20px;
-            background-color: #b7b7b761;
-            border-radius: 9px;
-            display: inline;
-            margin: 0px 3px;
-            cursor: pointer;
-
-        }
-
-        .delete-btn {
-            width: 20px;
-            background-color: #b7b7b761;
-            border-radius: 9px;
-            margin: 0px 3px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
