@@ -6,12 +6,14 @@ const btnAddReservation = document.querySelector(".btnAddReservation")
 
 close.addEventListener('click', () => {
     countainerForm.style.display = 'none';
+    idEdit = -1;
 })
 btnAddReservation.addEventListener('click', () => {
     countainerForm.style.display = 'flex';
 })
 
 
+let idEdit = -1;
 //jours entre 1 et 5
 // valider le formulaire
 const Name = document.querySelector(".name");
@@ -27,7 +29,7 @@ const erreurDDebut = document.querySelector(".erreurDDebut");
 const erreurDFin = document.querySelector(".erreurDFin");
 
 //get info from localstorage if exist
-const reservationInfo = JSON.parse(localStorage.getItem('reservations')) || [];
+let reservationInfo = JSON.parse(localStorage.getItem('reservations')) || [];
 // console.log(reservationInfo);
 AfficherCalendrier(reservationInfo);
 
@@ -101,6 +103,7 @@ function validerFormulaire() {
     })
 
     if (valide) {
+        // const idvalue=id.value();
         const NameValue = Name.value.trim();//supprimer les espace mn debut et la fin du mot " "
         const heureDebutValue = heureDebut.value.trim();
         const heureFinValue = heureFin.value.trim();
@@ -113,18 +116,51 @@ function validerFormulaire() {
         };
 
         let isunique = false;
+        
         for (let i = 0; i < reservationInfo.length; i++) {
             // if (parseInt(reservationInfo[i].heureDebut) == heureDebutValue) {
-                if(parseInt(reservationInfo[i].heureDebut) === parseInt(heureDebutValue)&& parseInt(reservationInfo[i].jourReservation)===parseInt(jourReservationValue)){
+            if (idEdit == reservationInfo[i].id) {
+                continue;
+            }
+            if (parseInt(reservationInfo[i].heureDebut) === parseInt(heureDebutValue) && parseInt(reservationInfo[i].jourReservation) === parseInt(jourReservationValue)) {
                 isunique = true;
                 break;
             }
+            // if ( parseInt(reservationInfo[i].id)===idvalue) {
+            //     console.log("hello");
+                
+            // }
+            // if ( parseInt(reservationInfo.id)===idRes.id) {
+            //     console.log("hello");
+                
+            //     AfficherCalendrier(reservationInfo);
+            // }
         }
 
         if (isunique) {
             alert("ce temps est deja reserver choisir un autre temps");
             formulaire.reset();
+        } else if(idEdit!=-1) {
+            // reservationInfo[idEdit] = reservationObject;
+
+            reservationInfo = reservationInfo.map((e)=>{
+                if (idEdit == e.id) {
+                    return reservationObject; 
+                }
+                return e;
+            })
+
+            console.log(reservationInfo[idEdit]);
+            
+            addToLocalStorage(reservationInfo);
+            AfficherCalendrier(reservationInfo);
+            alert("Reservation enregistree avec succes !");
+            formulaire.reset();
+            countainerForm.style.display = 'none';
+            idEdit = -1;
         } else {
+
+            
             reservationInfo.push(reservationObject);
             addToLocalStorage(reservationInfo);
 
@@ -161,6 +197,7 @@ function AfficherCalendrier(reservationInfo) {
 
     // res.innerHTML=reservationInfo[0].Name;
     // console.log(res);
+
 
     reservationInfo.forEach((e) => {
 
@@ -250,6 +287,7 @@ function AfficherCalendrier(reservationInfo) {
 
     })
     deleteReservation(reservationInfo);
+    updateReservation();
 }
 //permet la supprissio dun element
 function deleteReservation(reservation) {
@@ -309,3 +347,31 @@ function virifierTime(heureDebut, heureFin, element) {
 
 }
 
+
+function updateReservation() {
+    const btnUpdate = document.querySelectorAll(".edit-btn");
+    // console.log(btnUpdate[0].id);
+
+    btnUpdate.forEach((btnUpdate) => {
+        btnUpdate.addEventListener('click', () => {
+            countainerForm.style.display = 'flex';
+            idRes = reservationInfo.find(reservation => reservation.id == btnUpdate.id);
+            idEdit=btnUpdate.id;
+            // console.log(idRes);
+            if (!idRes)return;
+            Name.value=idRes.Name;
+            heureDebut.value=idRes.heureDebut;
+            heureFin.value=idRes.heureFin;
+            nombrePersonnes.value=idRes.nombrePersonnes;
+            typeRservation.value=idRes.typeRservation;
+            jourReservation.value=idRes.jourReservation;
+            
+            const res1 =reservationInfo.filter(res=>res.id !== Number(btnUpdate.id));
+            // console.log(res1);
+           
+
+
+        })
+    })
+
+}
