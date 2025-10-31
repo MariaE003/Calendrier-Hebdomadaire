@@ -21,6 +21,8 @@ const heureDebut = document.querySelector(".heureDebut");
 const heureFin = document.querySelector(".heureFin");
 const nombrePersonnes = document.querySelector(".nombrePersonnes");
 const typeRservation = document.querySelector(".typeRservation");
+// console.log(typeRservation.value);
+
 const jourReservation = document.querySelector(".jourReservation");
 const inputs = document.querySelectorAll(".input-style");//tous le sinputs
 const formulaire = document.querySelector(".formulaire");//form
@@ -214,7 +216,9 @@ function AfficherCalendrier(reservationInfo) {
                 </div>
                 `;
                 case1Div.appendChild(div1);
-                virifierTime(e.heureDebut, e.heureFin, div1);
+                virifierTime(e.heureDebut, e.heureFin, div1,e.typeRservation);
+                // console.log(e.typeRservation);
+                
                 // console.log(case1Div);
                 break;
             case 2:
@@ -230,7 +234,7 @@ function AfficherCalendrier(reservationInfo) {
                 </div>
                 `;
                 case2Div.appendChild(div2);
-                virifierTime(e.heureDebut, e.heureFin, div2);
+                virifierTime(e.heureDebut, e.heureFin, div2,e.typeRservation);
                 break;
             case 3:
                 const div3 = document.createElement("div");
@@ -245,7 +249,7 @@ function AfficherCalendrier(reservationInfo) {
                 `;
                 case3Div.appendChild(div3);
                 //fonction qui return le 
-                virifierTime(e.heureDebut, e.heureFin, div3);
+                virifierTime(e.heureDebut, e.heureFin, div3,e.typeRservation);
 
                 break;
             case 4:
@@ -260,7 +264,7 @@ function AfficherCalendrier(reservationInfo) {
                 </div>
                 `;
                 case4Div.appendChild(div4);
-                virifierTime(e.heureDebut, e.heureFin, div4);
+                virifierTime(e.heureDebut, e.heureFin, div4,e.typeRservation);
 
 
             case 5:
@@ -275,7 +279,7 @@ function AfficherCalendrier(reservationInfo) {
                 </div>
                 `;
                 case5Div.appendChild(div5);
-                virifierTime(e.heureDebut, e.heureFin, div5);
+                virifierTime(e.heureDebut, e.heureFin, div5,e.typeRservation);
                 break;
             default:
                 console.log("none");
@@ -308,46 +312,62 @@ function deleteReservation(reservation) {
 
 }
 //cette fonction permet de positionner l'element selon l'heur
-function virifierTime(heureDebut, heureFin, element) {
+function virifierTime(heureDebut, heureFin, element,typeRservation) {
+    // console.log(typeRservation);
+        
     if (parseInt(heureDebut) == 12) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 4px;";
-
+        
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 4px;";
+        // console.log(element);
     } else if (parseInt(heureDebut) == 13) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:4.7rem; ";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:4.7rem; ";
     }
     else if (parseInt(heureDebut) == 14) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:9.12rem;; ";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:9.12rem;; ";
     } else if (parseInt(heureDebut) == 15) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 13.56rem; ";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 13.56rem; ";
     }
     else if (parseInt(heureDebut) == 16) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:18rem;; ";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:18rem;; ";
     }
     else if (parseInt(heureDebut) == 17) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 22.44rem; ";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 22.44rem; ";
     }
     else if (parseInt(heureDebut) == 18) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 26.87rem; ";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 26.87rem; ";
     }
     else if (parseInt(heureDebut) == 19) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 31.28rem; ";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 31.28rem; ";
     }
     else if (parseInt(heureDebut) == 20) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 35.7rem; ";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 35.7rem; ";
     }
     else if (parseInt(heureDebut) == 21) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 40.14rem; ";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 40.14rem; ";
     }
     else if (parseInt(heureDebut) == 22) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 44.6rem; ";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 44.6rem; ";
     }
     else if (parseInt(heureDebut) == 23) {
-        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 49.05rem;";
+        element.style = "font-weight: 700;display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 49.05rem;";
     }
+    
+        virifierTicket(typeRservation,element);
 
 }
 
+function virifierTicket(typeRservation,element) {
+    if (typeRservation==="VIP") {
+        element.style.background="ff000036"        
+    } else if(typeRservation==="standard") {
+        element.style.background="#08bdac63"
+    }else if(typeRservation==="groupe"){
+        element.style.background="#899bff87"
+    }
 
+    // console.log(typeRservation);
+    
+}
 function updateReservation() {
     const btnUpdate = document.querySelectorAll(".edit-btn");
     // console.log(btnUpdate[0].id);
@@ -368,7 +388,6 @@ function updateReservation() {
             
             const res1 =reservationInfo.filter(res=>res.id !== Number(btnUpdate.id));
             // console.log(res1);
-           
 
 
         })
