@@ -12,7 +12,7 @@ btnAddReservation.addEventListener('click', () => {
 })
 
 
-//jours entre 1 et 7
+//jours entre 1 et 5
 // valider le formulaire
 const Name = document.querySelector(".name");
 const heureDebut = document.querySelector(".heureDebut");
@@ -112,25 +112,27 @@ function validerFormulaire() {
             nombrePersonnes: nombrePersonnesValue, typeRservation: typeRservationValue, jourReservation: jourReservationValue
         };
 
-        // let isunique = false;
-        // reservationInfo.forEach((e) => {
-        //     // if (parseInt(e.heureDebut) !== heureDebutValue || parseInt(e.heureFin) !== heureFinValue) {
-        //     if (parseInt(e.heureDebut) !== heureDebutValue ) {
-        //         isunique = true;
-        //     }
-        // })
-        // if (isunique) {
-        //     alert("ce temps est deja reserver choisir un autre temps");
-        //     formulaire.reset();
-        // } else {
-        reservationInfo.push(reservationObject);
-        addToLocalStorage(reservationInfo);
+        let isunique = false;
+        for (let i = 0; i < reservationInfo.length; i++) {
+            // if (parseInt(reservationInfo[i].heureDebut) == heureDebutValue) {
+                if(parseInt(reservationInfo[i].heureDebut) === parseInt(heureDebutValue)&& parseInt(reservationInfo[i].jourReservation)===parseInt(jourReservationValue)){
+                isunique = true;
+                break;
+            }
+        }
 
-        AfficherCalendrier(reservationInfo);
-        alert("Reservation enregistree avec succes !");
-        formulaire.reset();
-        countainerForm.style.display = 'none';
-        // }
+        if (isunique) {
+            alert("ce temps est deja reserver choisir un autre temps");
+            formulaire.reset();
+        } else {
+            reservationInfo.push(reservationObject);
+            addToLocalStorage(reservationInfo);
+
+            AfficherCalendrier(reservationInfo);
+            alert("Reservation enregistree avec succes !");
+            formulaire.reset();
+            countainerForm.style.display = 'none';
+        }
 
 
     }
@@ -244,10 +246,10 @@ function AfficherCalendrier(reservationInfo) {
 
 
         }
-        deleteReservation(reservationInfo);
 
 
     })
+    deleteReservation(reservationInfo);
 }
 //permet la supprissio dun element
 function deleteReservation(reservation) {
@@ -261,28 +263,12 @@ function deleteReservation(reservation) {
 
             reservation = reservation.filter(reser => reser.id !== parseInt(btnDelete.id));
 
-
             addToLocalStorage(reservation);
             AfficherCalendrier(reservation);
         })
     })
 
 }
-
-//     display: flex
-// ;
-//     font-size: 12px;
-//     align-items: center;
-//     width: 93px;
-//     height: 4.7em;
-//     background: rgb(199, 157, 220);
-//     text-align: center;
-//     border-radius: 3px;
-//     border-left: 4px solid rgba(28, 2, 63, 0.36);
-//     margin-bottom: 5px;
-//     position: absolute;
-//     top: 6px;
-
 //cette fonction permet de positionner l'element selon l'heur
 function virifierTime(heureDebut, heureFin, element) {
     if (parseInt(heureDebut) == 12) {
@@ -293,7 +279,7 @@ function virifierTime(heureDebut, heureFin, element) {
     }
     else if (parseInt(heureDebut) == 14) {
         element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:9.12rem;; ";
-    }else if (parseInt(heureDebut) == 15) {
+    } else if (parseInt(heureDebut) == 15) {
         element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 13.56rem; ";
     }
     else if (parseInt(heureDebut) == 16) {
@@ -308,13 +294,13 @@ function virifierTime(heureDebut, heureFin, element) {
     else if (parseInt(heureDebut) == 19) {
         element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 31.28rem; ";
     }
-    else if (parseInt(heureDebut) ==  20) {
+    else if (parseInt(heureDebut) == 20) {
         element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 35.7rem; ";
     }
     else if (parseInt(heureDebut) == 21) {
         element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 40.14rem; ";
     }
-    else if (parseInt(heureDebut) ==  22) {
+    else if (parseInt(heureDebut) == 22) {
         element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 44.6rem; ";
     }
     else if (parseInt(heureDebut) == 23) {
