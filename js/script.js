@@ -213,7 +213,6 @@ function AfficherCalendrier(reservationInfo) {
                 div1.innerHTML = `${e.Name}
                 ${e.heureDebut}
                 ${e.heureFin}
-                ${e.nombrePersonnes}
                  <div class="div-btn-reservation">
                 <button class="edit-btn" id="${e.id}"><img src="images/edit.svg"alt="none"></button>
                 <button class="delete-btn" id="${e.id}"><img src="images/delete.svg"alt="none"></button>
@@ -231,7 +230,6 @@ function AfficherCalendrier(reservationInfo) {
                 div2.innerHTML = `${e.Name}
                 ${e.heureDebut}
                 ${e.heureFin}
-                ${e.nombrePersonnes}
                 <div class="div-btn-reservation">
                 <button class="edit-btn" id="${e.id}"><img src="images/edit.svg"alt="none"></button>
                 <button class="delete-btn" id="${e.id}"><img src="images/delete.svg"alt="none"></button>
@@ -245,7 +243,6 @@ function AfficherCalendrier(reservationInfo) {
                 div3.innerHTML = `${e.Name}
                 ${e.heureDebut}
                 ${e.heureFin}
-                ${e.nombrePersonnes}
                 <div class="div-btn-reservation">
                 <button class="edit-btn" id="${e.id}"><img src="images/edit.svg"alt="none"></button>
                 <button class="delete-btn" id="${e.id}"><img src="images/delete.svg"alt="none"></button>
@@ -261,7 +258,6 @@ function AfficherCalendrier(reservationInfo) {
                 div4.innerHTML = `${e.Name}
                 ${e.heureDebut}
                 ${e.heureFin}
-                ${e.nombrePersonnes}
                 <div class="div-btn-reservation">
                 <button class="edit-btn" id="${e.id}"><img src="images/edit.svg"alt="none"></button>
                 <button class="delete-btn" id="${e.id}"><img src="images/delete.svg"alt="none"></button>
@@ -276,7 +272,6 @@ function AfficherCalendrier(reservationInfo) {
                 div5.innerHTML = `${e.Name}
                 ${e.heureDebut}
                 ${e.heureFin}
-                ${e.nombrePersonnes}
                 <div class="div-btn-reservation">
                 <button class="edit-btn" id="${e.id}"><img src="images/edit.svg"alt="none"></button>
                 <button class="delete-btn" id="${e.id}"><img src="images/delete.svg"alt="none"></button>
