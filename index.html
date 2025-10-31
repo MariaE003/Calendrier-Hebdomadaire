@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./src/output.css" rel="stylesheet">
+
+
     <title>calendrier</title>
     <!-- description et keyword -->
-    <script src="script.js" defer></script>
+    <script src="js/script.js" defer></script>
     <style>
         .conteiner {
             background-color: rgb(196, 221, 243);
@@ -67,13 +69,36 @@
             padding: 2px;
             /* cursor: pointer; */
         }
+
+        /*  */
+        .div-btn-reservation{
+            margin-top: 9px;
+
+        }
+        .edit-btn {
+            width: 20px;
+            background-color: #d200ff5e;
+            border-radius: 9px;
+            display: inline;
+            margin: 0px 3px;
+            cursor: pointer;
+
+        }
+
+        .delete-btn {
+            width: 20px;
+            background-color: #d200ff5e;
+            border-radius: 9px;
+            margin: 0px 3px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
     <main class="flex flex-col ">
         <section class="conteiner ml-19 w-205   flex  items-start justify-evenly p-8  h-44 rounded-xl">
-            <img class="w-40 md:20" src="./images/undraw_booking_1ztt (1).svg" alt="">
+            <img class="w-40 md:20" src="./images/img-main.svg" alt="">
             <div>
                 <h1 class="text-xl font-bold my-1.5">
                     Calendrier Hebdomadaire
@@ -99,29 +124,29 @@
                 <h6>WEN</h6>
                 <h6>THU</h6>
                 <h6>FRI</h6>
-                <h6>SAT</h6>
-                <h6>SUN</h6>
+                <h6 class="bg-gray-100 rounded-xl p-2 w-auto">SAT</h6>
+                <h6 class="bg-gray-100 rounded-xl p-2 w-auto">SUN</h6>
             </div>
 
             <!-- hr -->
             <div class="">
                 <div class="flex justify-around w-4xl flex-wrap">
                     <div class="time flex flex-col items-center justify-around h-200">
-                        <div class="">12h-13h</div>
-                        <div class="case2">13h-14h</div>
-                        <div class="case3">14h-15h</div>
-                        <div class="case4">19h-20h</div>
-                        <div class="case5">20h-21h</div>
-                        <div class="case6">21h-22h</div>
-                        <div class="case7">22h-23h</div>
+                        <div class="case1Time">12h-13h</div>
+                        <div class="case2Time">13h-14h</div>
+                        <div class="case3Time">14h-15h</div>
+                        <div class="case4Time">19h-20h</div>
+                        <div class="case5Time">20h-21h</div>
+                        <div class="case6Time">21h-22h</div>
+                        <div class="case7Time">22h-23h</div>
                     </div>
-                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 case1"></div>
-                    <div class="bg-gray-200 w-27 h-200 my-2 rounded-xl py-2 px-2 case2"></div>
-                    <div class="bg-gray-200 w-27 h-200 my-2 rounded-xl py-2 px-2 case3"></div>
-                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 case4"></div>
-                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 case5"></div>
-                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 case6"></div>
-                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 case7"></div>
+                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 case1 relative"></div>
+                    <div class="bg-gray-200 w-27 h-200 my-2 rounded-xl py-2 px-2 case2 relative"></div>
+                    <div class="bg-gray-200 w-27 h-200 my-2 rounded-xl py-2 px-2 case3 relative"></div>
+                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 case4 relative"></div>
+                    <div class="bg-gray-200 w-27 h-200  my-2 rounded-xl py-2 px-2 case5 relative"></div>
+                    <div class="bg-gray-100 w-27 h-200  my-2 rounded-xl py-2 px-2 case6 relative"></div>
+                    <div class="bg-gray-100 w-27 h-200  my-2 rounded-xl py-2 px-2 case7 relative"></div>
 
                 </div>
             </div>
@@ -150,7 +175,7 @@
             </form>
         </div>
 
-       
+
 
     </main>
 </body>
