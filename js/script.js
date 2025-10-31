@@ -71,7 +71,7 @@ function validerFormulaire() {
         }
         //si condition heur debut superieur que heur fin
         else if (input.classList.contains('heureFin')) {
-            if (parseInt(heureFin.value) < 12 || parseInt(heureFin.value > 23)) {
+            if (parseInt(heureFin.value) < 12 || parseInt(heureFin.value > '00')) {
                 erreurDFin.innerHTML = "l'heur doit etre entre 12 et 23";
                 erreurDFin.style = "color:red;";
                 input.value = "";
@@ -81,6 +81,7 @@ function validerFormulaire() {
                 erreurDFin.innerHTML = "";
             }
             if (heureDebut.value > heureFin.value) {
+                // heureFin=='00'?
                 erreurDFin.innerHTML = "l'heur de fin doit etre superieur de la date l'heur de depart ";
                 erreurDFin.style = "color:red;";
                 input.value = "";
@@ -268,29 +269,56 @@ function deleteReservation(reservation) {
 
 }
 
+//     display: flex
+// ;
+//     font-size: 12px;
+//     align-items: center;
+//     width: 93px;
+//     height: 4.7em;
+//     background: rgb(199, 157, 220);
+//     text-align: center;
+//     border-radius: 3px;
+//     border-left: 4px solid rgba(28, 2, 63, 0.36);
+//     margin-bottom: 5px;
+//     position: absolute;
+//     top: 6px;
 
 //cette fonction permet de positionner l'element selon l'heur
 function virifierTime(heureDebut, heureFin, element) {
-    if (parseInt(heureDebut) == 12 || parseInt(heureFin) < 13) {
-        element.style = "display:flex;font-size: 14px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 8px;";
+    if (parseInt(heureDebut) == 12) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 4px;";
 
-    } else if (parseInt(heureDebut) == 13 || parseInt(heureFin) < 14) {
-        element.style = "display:flex;font-size: 14px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:10rem; ";
+    } else if (parseInt(heureDebut) == 13) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:4.7rem; ";
     }
-    else if (parseInt(heureDebut) == 14 || parseInt(heureFin) < 15) {
-        element.style = "display:flex;font-size: 14px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:17.2rem; ";
+    else if (parseInt(heureDebut) == 14) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:9.12rem;; ";
+    }else if (parseInt(heureDebut) == 15) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 13.56rem; ";
     }
-    else if (parseInt(heureDebut) == 19 || parseInt(heureFin) < 20) {
-        element.style = "display:flex;font-size: 14px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:16.9rem; ";
+    else if (parseInt(heureDebut) == 16) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:18rem;; ";
     }
-    else if (parseInt(heureDebut) == 20 || parseInt(heureFin) < 21) {
-        element.style = "display:flex;font-size: 14px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:24.2rem; ";
+    else if (parseInt(heureDebut) == 17) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 22.44rem; ";
     }
-    else if (parseInt(heureDebut) == 21 || parseInt(heureFin) < 22) {
-        element.style = "display:flex;font-size: 14px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top:38.4rem; ";
+    else if (parseInt(heureDebut) == 18) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 26.87rem; ";
     }
-    else if (parseInt(heureDebut) == 22 || parseInt(heureFin) < 23) {
-        element.style = "display:flex;font-size: 14px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 44.5rem; ";
+    else if (parseInt(heureDebut) == 19) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 31.28rem; ";
+    }
+    else if (parseInt(heureDebut) ==  20) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 35.7rem; ";
+    }
+    else if (parseInt(heureDebut) == 21) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 40.14rem; ";
+    }
+    else if (parseInt(heureDebut) ==  22) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 44.6rem; ";
+    }
+    else if (parseInt(heureDebut) == 23) {
+        element.style = "display:flex;font-size: 12px; align-items: center; width: 93px; height: 5.7em; background: #c79ddc; text-align: center; border-radius: 3px; border-left: 4px #1c023f5c solid;margin-bottom: 5px;position: absolute;top: 49.05rem;";
     }
 
 }
