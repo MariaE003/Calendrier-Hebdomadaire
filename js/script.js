@@ -22,10 +22,14 @@ const heureFin = document.querySelector(".heureFin");
 const nombrePersonnes = document.querySelector(".nombrePersonnes");
 const typeRservation = document.querySelector(".typeRservation");
 // console.log(typeRservation.value);
-
 const jourReservation = document.querySelector(".jourReservation");
 const inputs = document.querySelectorAll(".input-style");//tous le sinputs
 const formulaire = document.querySelector(".formulaire");//form
+
+//card des reservation dispo
+const cardsReservation = document.querySelector(".cards-reservation");
+
+
 //spanEreur
 const erreurDDebut = document.querySelector(".erreurDDebut");
 const erreurDFin = document.querySelector(".erreurDFin");
