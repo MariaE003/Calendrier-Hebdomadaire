@@ -110,7 +110,7 @@ function validerFormulaire() {
             id: Date.now(), Name: NameValue, heureDebut: heureDebutValue, heureFin: heureFinValue,
             nombrePersonnes: nombrePersonnesValue, typeRservation: typeRservationValue, jourReservation: jourReservationValue
         };
-        
+
         // let isunique = false;
         // reservationInfo.forEach((e) => {
         //     // if (parseInt(e.heureDebut) !== heureDebutValue || parseInt(e.heureFin) !== heureFinValue) {
@@ -122,13 +122,13 @@ function validerFormulaire() {
         //     alert("ce temps est deja reserver choisir un autre temps");
         //     formulaire.reset();
         // } else {
-            reservationInfo.push(reservationObject);
-            addToLocalStorage(reservationInfo);
+        reservationInfo.push(reservationObject);
+        addToLocalStorage(reservationInfo);
 
-            AfficherCalendrier(reservationInfo);
-            alert("Reservation enregistree avec succes !");
-            formulaire.reset();
-            countainerForm.style.display = 'none';
+        AfficherCalendrier(reservationInfo);
+        alert("Reservation enregistree avec succes !");
+        formulaire.reset();
+        countainerForm.style.display = 'none';
         // }
 
 
@@ -222,11 +222,28 @@ function AfficherCalendrier(reservationInfo) {
                 case4Div.appendChild(div4);
                 virifierTime(e.heureDebut, e.heureFin, div4);
 
-               
+
             case 5:
-                
+                const div5 = document.createElement("div");
+                div5.innerHTML = `${e.Name}
+                ${e.heureDebut}
+                ${e.heureFin}
+                ${e.nombrePersonnes}
+                <div class="div-btn-reservation">
+                <button class="edit-btn" id="${e.id}"><img src="images/edit.svg"alt="none"></button>
+                <button class="delete-btn" id="${e.id}"><img src="images/delete.svg"alt="none"></button>
+                </div>
+                `;
+                case5Div.appendChild(div5);
+                virifierTime(e.heureDebut, e.heureFin, div5);
+                break;
+            default:
+                console.log("none");
+                break;
+
+
         }
-        
+
 
     })
 }
