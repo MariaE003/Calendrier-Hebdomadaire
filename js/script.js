@@ -243,6 +243,7 @@ function AfficherCalendrier(reservationInfo) {
 
 
         }
+        deleteReservation(reservationInfo);
 
 
     })
