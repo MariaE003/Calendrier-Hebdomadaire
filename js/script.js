@@ -56,7 +56,7 @@ function validerFormulaire() {
             input.value = "";
             input.placeholder = 'entrez un nom valide (lettres uniquement)';
             valide = false;
-        } else if (input.classList.contains('jourReservation') && (jourReservation.value < 1 || jourReservation.value > 6)) {
+        } else if (input.classList.contains('jourReservation') && (jourReservation.value < 1 || jourReservation.value > 5)) {
             input.style.outline = "red 0.5px solid";
             input.value = "";
             input.placeholder = "entrez un nombre entre 1 et 7";
@@ -283,6 +283,7 @@ function AfficherCalendrier(reservationInfo) {
                 break;
             default:
                 console.log("none");
+                // alert
                 break;
 
 
